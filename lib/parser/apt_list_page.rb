@@ -23,8 +23,7 @@ class AptListPage
         next if link.href == nil
         next if i >= max_apts
         next unless links_to_apt?(link)
-				next if AptsTable.find_by_href(link.href)
-				AptsTable.create(:href => link.href)
+				next if AptsTable.find_by_url(link.href)
         @apts << AptDetailsPage.new(link.href, link.to_s).parse
         i += 1
       end

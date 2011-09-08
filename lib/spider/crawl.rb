@@ -18,11 +18,6 @@ max_apts_to_parse = ARGV[0] ||= 10
 url = "http://washingtondc.craigslist.org/nva/apa/"
 va = AptListPage.new(url).parse(max_apts_to_parse.to_i)
 
-
-# DEBUG: The following block tests feature selection and outputs the results
-#va.apts.each do |apt|
-#  next unless apt.features.features_hash[:FIOS] == true
-#  puts "- "*50
-#  puts apt.url
-#  puts apt.features.true_to_s
-#end
+va.apts.each do |apt|
+	AptsTable.create(:url => apt.url, :title => apt.title, :features => apt.features)
+end
