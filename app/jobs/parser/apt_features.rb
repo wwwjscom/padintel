@@ -1,4 +1,4 @@
-require "../models/feature_term"
+#require "../models/feature_term"
 
 class AptFeatures < ActiveRecord::Base
 

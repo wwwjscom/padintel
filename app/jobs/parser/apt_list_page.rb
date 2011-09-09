@@ -3,17 +3,13 @@
 require 'rubygems'
 require 'mechanize'
 require 'parser/apt_details_page'
-require "../models/apartment"
+#require "../models/apartment"
 
 class AptListPage < ActiveRecord::Base
 
   attr_reader :apts, :url
 
   def initialize(url)
-		ActiveRecord::Base.establish_connection(
-		  :adapter  => "sqlite3",
-			:database => "../../db/development.sqlite3"
-		)    
 		@apts = []
     @url = url
     @mech = Mechanize.new
@@ -25,6 +21,7 @@ class AptListPage < ActiveRecord::Base
     @mech.get(@url) do |page|
       i = 0
       page.links.each do |link|
+				puts max_apts
         next if link.href == nil
         next if i >= max_apts
         next unless links_to_apt?(link)

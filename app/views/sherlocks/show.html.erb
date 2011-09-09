@@ -4,11 +4,8 @@
 <p>with features <%= @sherlock.features.join(', ') %></p>
 
 <% @apartments.each do |apartment| %>
-	<p style="font-weight: bold;"><%= apartment.title %></p>
+	<p style="font-weight: bold;"><%= link_to apartment.title, apartment.url %></p>
 	<p>Features: <%= apartment.features.join(', ') %></p>
-	<p>
-		id: <%= apartment.id %> | <%= link_to 'Original post', apartment.url %>
-	</p>
 	<hr />
 <% end %>
 
