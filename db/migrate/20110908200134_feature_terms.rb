@@ -3,6 +3,7 @@ class FeatureTerms < ActiveRecord::Migration
 		create_table :feature_terms do |t|
 			t.string :feature
 			t.text :variations
+			table.timestamps
 		end
   end
 
