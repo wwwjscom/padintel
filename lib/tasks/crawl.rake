@@ -2,11 +2,11 @@ namespace :spider do
 	desc "Crawl cl for new posts"
 	task :crawl => [:environment] do
 		ActiveRecord::Base.establish_connection Rails.env
-		require 'rubygems'
-		require 'active_record'
-		require "app/jobs/parser/apt_list_page"
+#		require 'rubygems'
+#		require 'active_record'
+		require "#{RAILS_ROOT}/app/jobs/parser/apt_list_page"
 		
-		max_apts_to_parse = 100
+		max_apts_to_parse = 2
 		
 		# This link will need to change in the future...should be dynamic to search the US
 		url = "http://washingtondc.craigslist.org/nva/apa/"
