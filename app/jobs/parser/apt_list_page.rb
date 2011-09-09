@@ -3,13 +3,18 @@
 require 'rubygems'
 require 'mechanize'
 require 'parser/apt_details_page'
+require "../models/apartment"
 
-class AptListPage
+class AptListPage < ActiveRecord::Base
 
   attr_reader :apts, :url
 
   def initialize(url)
-    @apts = []
+		ActiveRecord::Base.establish_connection(
+		  :adapter  => "sqlite3",
+			:database => "../../db/development.sqlite3"
+		)    
+		@apts = []
     @url = url
     @mech = Mechanize.new
     self
@@ -23,7 +28,7 @@ class AptListPage
         next if link.href == nil
         next if i >= max_apts
         next unless links_to_apt?(link)
-				next if AptsTable.find_by_url(link.href)
+				next if Apartment.find_by_url(link.href)
         @apts << AptDetailsPage.new(link.href, link.to_s).parse
         i += 1
       end

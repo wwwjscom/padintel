@@ -1,0 +1,22 @@
+<%= form_for(@sherlock) do |f| %>
+  <% if @sherlock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sherlock.errors.count, "error") %> prohibited this sherlock from being saved:</h2>
+
+      <ul>
+      <% @sherlock.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+		<% @feature_terms.each do |feature| %>
+			<%= check_box("features", feature) %> - <%= feature.titleize %><br />
+		<% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Listing sherlocks</h1>
+
+<table>
+  <tr>
+    <th>Features</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sherlocks.each do |sherlock| %>
+  <tr>
+    <td><%= sherlock.features %></td>
+    <td><%= link_to 'Show', sherlock %></td>
+    <td><%= link_to 'Edit', edit_sherlock_path(sherlock) %></td>
+    <td><%= link_to 'Destroy', sherlock, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sherlock', new_sherlock_path %>
