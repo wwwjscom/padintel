@@ -1,7 +1,7 @@
 namespace :spider do
 	desc "Crawl cl for new posts"
 	task :crawl => [:environment] do
-		ActiveRecord::Base.establish_connection :development
+		ActiveRecord::Base.establish_connection Rails.env
 		require 'rubygems'
 		require 'active_record'
 		require "app/jobs/parser/apt_list_page"

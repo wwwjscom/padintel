@@ -21,7 +21,6 @@ class AptListPage < ActiveRecord::Base
     @mech.get(@url) do |page|
       i = 0
       page.links.each do |link|
-				puts max_apts
         next if link.href == nil
         next if i >= max_apts
         next unless links_to_apt?(link)
