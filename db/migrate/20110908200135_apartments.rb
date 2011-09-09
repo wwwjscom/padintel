@@ -4,7 +4,7 @@ class Apartments < ActiveRecord::Migration
 			t.string :url
 			t.string :title
 			t.text :features
-      table.timestamps
+      t.timestamps
 		end
   end
 
