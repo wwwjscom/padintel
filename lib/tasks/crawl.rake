@@ -12,9 +12,12 @@ namespace :spider do
 		url = "http://washingtondc.craigslist.org/nva/apa/"
 		va = AptListPage.new(url).parse(max_apts_to_parse)
 
+		i=0
 		va.apts.each do |apt|
 			Apartment.create(:url => apt.url, :title => apt.title, :features => apt.features.features_array)
+			i+=1
 		end
+		puts "Added #{i} apartments"
 		
 	end
 end
