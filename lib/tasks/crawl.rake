@@ -6,7 +6,7 @@ namespace :spider do
 #		require 'active_record'
 		require "#{RAILS_ROOT}/app/jobs/parser/apt_list_page"
 		
-		max_apts_to_parse = 2
+		max_apts_to_parse = 100
 		
 		# This link will need to change in the future...should be dynamic to search the US
 		url = "http://washingtondc.craigslist.org/nva/apa/"
