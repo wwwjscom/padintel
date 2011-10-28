@@ -83,11 +83,12 @@ a:hover {
 
 #header li {
   float: left;
+  margin: 0 8px;
+
 }
 
 #header li a {
   font-size: 16px;
-  margin: 0 15px;
   color: #3333FF;
   font-weight: bold;
   text-decoration: none;
