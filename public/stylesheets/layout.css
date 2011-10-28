@@ -115,6 +115,11 @@ p.small_note {
   font-style: italic
 }
 
+p.announcement {
+  background-color: #FF0;
+  font-style: italic;
+}
+
 #about-content {
   background-color: #ffd;
   border: 1px solid #fc0;
