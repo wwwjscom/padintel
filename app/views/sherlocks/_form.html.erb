@@ -26,7 +26,7 @@
   <div class="features_box desired">
     <div class="field">
       <h2>Desired</h2>
-      <h4>must have ONE or more of these</h4>
+      <h4>must have ONE or more</h4>
       <% @features.each do |feature| %>
         <%= check_box("desired", feature) %> - <%= feature.titleize %><br />
       <% end %>
@@ -36,7 +36,7 @@
   <div class="features_box nots">
     <div class="field">
       <h2>Nots</h2>
-      <h4>must have NONE of these</h4>
+      <h4>CANNOT have ANY</h4>
       <% @features.each do |feature| %>
         <%= check_box("nots", feature) %> - <%= feature.titleize %><br />
       <% end %>
