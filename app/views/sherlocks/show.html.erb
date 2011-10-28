@@ -1,12 +1,10 @@
-<% stylesheet_link_tag("sherlock_form") %>
-
 <p id="notice"><%= notice %></p>
 
 <h1>Apartment Results</h2>
+<p class="announcement">Bookmark this page and come back later and check for new results</p>
 
 <div class="features_box required">
-  <h2>Required</h2>
-  <h4>must have ALL of these</h4>
+  <h3>Required</h3>
   <ul>
   <% @sherlock.required.each do |r| %>
     <li><%= r.titleize %></li>
@@ -16,8 +14,7 @@
 
 <div class="features_box desired">
 
-  <h2>Desired</h2>
-  <h4>must have ONE or more of these</h4>
+  <h3>Desired</h3>
   <ul>
   <% @sherlock.desired.each do |r| %>
     <li><%= r.titleize %></li>
@@ -26,8 +23,7 @@
 </div>
 <div class="features_box nots">
 
-  <h2>Nots</h2>
-  <h4>WONT have ANY</h4>
+  <h3>Nots</h3>
   <ul>
   <% @sherlock.nots.each do |r| %>
     <li><%= r.titleize %></li>

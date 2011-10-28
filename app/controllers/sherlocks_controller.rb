@@ -60,7 +60,7 @@ class SherlocksController < ApplicationController
 
     respond_to do |format|
       if @sherlock.save
-        format.html { redirect_to(@sherlock, :notice => 'Sherlock was successfully created.') }
+        format.html { redirect_to(@sherlock) }
         format.xml  { render :xml => @sherlock, :status => :created, :location => @sherlock }
       else
         format.html { render :action => "new" }
