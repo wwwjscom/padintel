@@ -1,4 +1,9 @@
 class SherlocksController < ApplicationController
+
+  # /about
+  def about
+  end
+
   # GET /sherlocks
   # GET /sherlocks.xml
   def index
