@@ -14,7 +14,7 @@ class SherlocksController < ApplicationController
   # GET /sherlocks/1.xml
   def show
     @sherlock = Sherlock.find(params[:id])
-		@apartments = Apartment.find_with_features(@sherlock.features)
+		@apartments = Apartment.find_with_features(@sherlock.required, @sherlock.desired, @sherlock.nots)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,7 @@ class SherlocksController < ApplicationController
   # GET /sherlocks/new.xml
   def new
     @sherlock = Sherlock.new
-		@feature_terms = FeatureTerm.all.map{|a| a.feature}
+		@features = FeatureTerm.all.map{|a| a.feature}
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,9 +43,15 @@ class SherlocksController < ApplicationController
   # POST /sherlocks.xml
   def create
     @sherlock = Sherlock.new(params[:sherlock])
-		active_features = []
-		params[:features].each { |k,v| if v=="1" then active_features << k end }
-		@sherlock.features = active_features
+		active_required = []
+		active_desired = []
+		active_nots = []
+		params[:required].each { |k,v| if v=="1" then active_required << k end }
+		params[:desired].each { |k,v| if v=="1" then active_desired << k end }
+		params[:nots].each { |k,v| if v=="1" then active_nots << k end }
+		@sherlock.required = active_required
+		@sherlock.desired = active_desired
+		@sherlock.nots = active_nots
 
     respond_to do |format|
       if @sherlock.save

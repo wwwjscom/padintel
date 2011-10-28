@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Apartments</h2>
-<p>with features <%= @sherlock.features.join(', ') %></p>
+<p>MUST have <%= @sherlock.required.join(', ') %></p>
+<p>MAY have <%= @sherlock.desired.join(', ') %></p>
+<p>WONT have <%= @sherlock.nots.join(', ') %></p>
 
 <% @apartments.each do |apartment| %>
 	<p style="font-weight: bold;"><%= link_to apartment.title, apartment.url %></p>

@@ -1,3 +1,5 @@
 class Sherlock < ActiveRecord::Base
-	serialize :features, Array
+	serialize :required, Array
+	serialize :desired, Array
+	serialize :nots, Array
 end

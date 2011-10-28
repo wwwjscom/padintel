@@ -12,8 +12,26 @@
   <% end %>
 
   <div class="field">
-		<% @feature_terms.each do |feature| %>
-			<%= check_box("features", feature) %> - <%= feature.titleize %><br />
+    <h2>Required</h2>
+    <h4>The result must have ALL of these</h4>
+		<% @features.each do |feature| %>
+			<%= check_box("required", feature) %> - <%= feature.titleize %><br />
+		<% end %>
+  </div>
+
+  <div class="field">
+    <h2>Desired</h2>
+    <h4>The result must have ONE or more of these</h4>
+		<% @features.each do |feature| %>
+			<%= check_box("desired", feature) %> - <%= feature.titleize %><br />
+		<% end %>
+  </div>
+
+  <div class="field">
+    <h2>Nots</h2>
+    <h4>The result must have NONE of these</h4>
+		<% @features.each do |feature| %>
+			<%= check_box("nots", feature) %> - <%= feature.titleize %><br />
 		<% end %>
   </div>
   <div class="actions">

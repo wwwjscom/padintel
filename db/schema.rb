@@ -13,9 +13,11 @@
 ActiveRecord::Schema.define(:version => 20110909174327) do
 
   create_table "apartments", :force => true do |t|
-    t.string "url"
-    t.string "title"
-    t.text   "features"
+    t.string   "url"
+    t.string   "title"
+    t.text     "features"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -34,12 +36,16 @@ ActiveRecord::Schema.define(:version => 20110909174327) do
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "feature_terms", :force => true do |t|
-    t.string "feature"
-    t.text   "variations"
+    t.string   "feature"
+    t.text     "variations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sherlocks", :force => true do |t|
-    t.text     "features"
+    t.text     "desired"
+    t.text     "required"
+    t.text     "nots"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
