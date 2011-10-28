@@ -22,3 +22,8 @@ FeatureTerm.create(:feature => 'parking', :variations => ["parking","garage"])
 FeatureTerm.create(:feature => 'dishwasher', :variations => ["dishwasher"])
 FeatureTerm.create(:feature => 'disposal', :variations => ["disposal"])
 FeatureTerm.create(:feature => 'furnished', :variations => ["furnished"])
+
+Apartment.create(:url => 'http://foobar.com', :title => 'apt 1', :features => ['hardwood floors', 'pool', 'gym'])
+Apartment.create(:url => 'http://foobar.com', :title => 'apt 2', :features => ['carpet', 'pool', 'gym'])
+Apartment.create(:url => 'http://foobar.com', :title => 'apt 3', :features => ['hardwood floors', 'pool', 'gym', 'den', 'fios'])
+Apartment.create(:url => 'http://foobar.com', :title => 'apt 5', :features => ['den', 'fios', 'parking'])

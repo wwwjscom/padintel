@@ -3,6 +3,7 @@
   float: left;
   padding: 10px;
   width: 300px;
+  min-height: 120px;
 }
 .required {
   background-color: #66DD66;

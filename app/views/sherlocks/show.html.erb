@@ -1,16 +1,43 @@
+<% stylesheet_link_tag("sherlock_form") %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Apartments</h2>
-<p>MUST have ALL: <%= @sherlock.required.join(', ') %></p>
-<p>MUST have ONE or more: <%= @sherlock.desired.join(', ') %></p>
-<p>WONT have ANY: <%= @sherlock.nots.join(', ') %></p>
+<h1>Apartment Results</h2>
+
+<div class="features_box required">
+  <h2>Required</h2>
+  <h4>must have ALL of these</h4>
+  <ul>
+  <% @sherlock.required.each do |r| %>
+    <li><%= r.titleize %></li>
+  <% end %>
+  </ul>
+</div>
+
+<div class="features_box desired">
+
+  <h2>Desired</h2>
+  <h4>must have ONE or more of these</h4>
+  <ul>
+  <% @sherlock.desired.each do |r| %>
+    <li><%= r.titleize %></li>
+  <% end %>
+  </ul>
+</div>
+<div class="features_box nots">
+
+  <h2>Nots</h2>
+  <h4>WONT have ANY</h4>
+  <ul>
+  <% @sherlock.nots.each do |r| %>
+    <li><%= r.titleize %></li>
+  <% end %>
+  </ul>
+</div>
+<div style="clear: both;"></div>
 
 <% @apartments.each do |apartment| %>
 	<p style="font-weight: bold;"><%= link_to apartment.title, apartment.url %></p>
 	<p>Features: <%= apartment.features.join(', ') %></p>
 	<hr />
 <% end %>
-
-
-<%= link_to 'Edit', edit_sherlock_path(@sherlock) %> |
-<%= link_to 'Back', sherlocks_path %>
