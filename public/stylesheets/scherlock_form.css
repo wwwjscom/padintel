@@ -1,0 +1,15 @@
+.features_box {
+  border: 1px solid black;
+  float: left;
+  padding: 10px;
+  width: 300px;
+}
+.required {
+  background-color: #66DD66;
+}
+.desired {
+  background-color: #6666FF;
+}
+.nots {
+  background-color: #FF6666;
+}

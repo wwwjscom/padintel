@@ -26,7 +26,7 @@ class SherlocksController < ApplicationController
   # GET /sherlocks/new.xml
   def new
     @sherlock = Sherlock.new
-		@features = FeatureTerm.all.map{|a| a.feature}
+		@features = FeatureTerm.all.map{|a| a.feature}.sort
 
     respond_to do |format|
       format.html # new.html.erb
