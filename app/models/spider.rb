@@ -29,7 +29,7 @@ class Spider
         i+=1
         total += 1
       end
-      added_tracker{r.name => i}
+      added_tracker[r.name] = i
     end
     added_tracker.each_pair do |r, i| puts "#{r}\t #{i}" end
     puts "Total added: #{total}"
