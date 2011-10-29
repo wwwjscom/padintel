@@ -2,8 +2,8 @@ class Apartment < ActiveRecord::Base
 	serialize :features, Array
   belongs_to :region
 	
-	def self.find_with_features(required_features, desired_features, nots_features)
-    apts = Apartment.all
+	def self.find_with_features(required_features, desired_features, nots_features, region_id)
+    apts = Apartment.where(:region_id => region_id)
       apts.delete_if {|apt| (apt.features & required_features).size < required_features.size} unless required_features.empty? 
       apts.delete_if {|apt| (apt.features - nots_features).size < apt.features.size} unless nots_features.empty? 
       apts.delete_if {|apt| (apt.features - desired_features).size == apt.features.size} unless desired_features.empty? 

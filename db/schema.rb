@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20111028235859) do
     t.text     "desired"
     t.text     "required"
     t.text     "nots"
+    t.integer  "region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

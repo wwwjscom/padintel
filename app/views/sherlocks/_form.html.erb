@@ -13,6 +13,13 @@
     </div>
   <% end %>
 
+
+  <hr />
+  <br />
+  Region: <%= select('sherlock', 'region_id', Region.all_active.order(:name).map{|r| [r.name, r.id] }) %>
+  <br /><br />
+  <div style="clear: both;"></div>
+
   <div class="features_box required">
     <div class="field">
       <h2>Required</h2>
@@ -43,6 +50,8 @@
     </div>
   </div>
   <div style="clear: both;"></div>
+
+  <br />
 
   <div class="actions">
     <%= submit_tag 'Search' %>

@@ -4,6 +4,7 @@ class CreateSherlocks < ActiveRecord::Migration
       t.text :desired
       t.text :required
       t.text :nots
+      t.integer :region_id
 
       t.timestamps
     end
