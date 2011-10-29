@@ -37,7 +37,7 @@ class Spider
     added_tracker.each_pair do |r, i| puts "#{r}\t #{i}" end
     puts "Total added: #{total}"
     puts "Total failures: #{failures}"
-    puts "Total time: #{(Time.now - start_time})"
+    puts "Total time: (#{Time.now - start_time})"
 	end
 
 end
