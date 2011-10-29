@@ -25,6 +25,8 @@ class Spider
           puts "Apartment Creation Error:"
           puts $!
           failures += 1
+          i -= 1
+          total -= 1
         end
         i+=1
         total += 1
