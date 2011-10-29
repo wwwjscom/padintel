@@ -1,5 +1,6 @@
 class Apartment < ActiveRecord::Base
 	serialize :features, Array
+  belongs_to :region
 	
 	def self.find_with_features(required_features, desired_features, nots_features)
     apts = Apartment.all
