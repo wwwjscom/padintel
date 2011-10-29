@@ -12,6 +12,7 @@ class Spider
 		max_apts_to_parse = 100
     total = 0
     failures = 0
+    added_tracker = {}
 		
     Region.all_active.each do |r|
       region = AptListPage.new(r.url).parse(max_apts_to_parse)
@@ -28,8 +29,9 @@ class Spider
         i+=1
         total += 1
       end
-      puts "Added #{i} apartments to region #{r.name}"
+      added_tracker{r.name => i}
     end
+    added_tracker.each_pair do |r, i| puts "#{r}\t #{i}" end
     puts "Total added: #{total}"
     puts "Total failures: #{failures}"
 	end
