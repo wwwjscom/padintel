@@ -11,19 +11,27 @@ class Spider
 		
 		max_apts_to_parse = 100
     total = 0
+    failures = 0
 		
     Region.all_active.each do |r|
       region = AptListPage.new(r.url).parse(max_apts_to_parse)
 
       i=0
       region.apts.each do |apt|
+        begin
         Apartment.create(:region_id => r.id, :neighborhood => apt.neighborhood, :price => apt.price, :url => apt.url, :title => apt.title, :features => apt.features.features_array)
+        rescue
+          puts "Apartment Creation Error:"
+          puts $!
+          failures += 1
+        end
         i+=1
         total += 1
       end
       puts "Added #{i} apartments to region #{r.name}"
     end
     puts "Total added: #{total}"
+    puts "Total failures: #{failures}"
 	end
 
 end
