@@ -9,7 +9,7 @@ class Spider
 		ActiveRecord::Base.establish_connection Rails.env
 		require "#{RAILS_ROOT}/app/jobs/parser/apt_list_page"
 		
-		max_apts_to_parse = 1
+		max_apts_to_parse = 100
     total = 0
 		
     Region.all_active.each do |r|
