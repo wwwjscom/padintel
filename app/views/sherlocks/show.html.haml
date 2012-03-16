@@ -1,0 +1,40 @@
+%p#notice= notice
+
+%h2 Apartment Results
+%p.announcementBookmark this page and come back later and check for new results
+
+%p= "Region: #{@sherlock.region.name}"
+
+.features_box.required
+  %h3 Required
+  %ul
+  - @sherlock.required.each do |r|
+    %li= r.titleize
+  - end
+
+.features_box.desired
+  %h3 Desired
+  %ul
+  - @sherlock.desired.each do |r|
+    %li= r.titleize
+  - end
+
+.features_box.nots
+
+  %h3 Nots
+  %ul
+  - @sherlock.nots.each do |r|
+    %li= r.titleize
+  - end
+
+.clear
+
+- if @apartments.empty?
+  %p No results found, sorry.
+- else
+  - @apartments.each do |apartment|
+    %p= link_to apartment.title, apartment.url
+    %p= "Features: #{apartment.features.join(', ')}"
+    %hr
+  - end
+- end

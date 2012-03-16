@@ -8,6 +8,10 @@ body {
   color: #333;
 }
 
+.clear {
+ clear: both; 
+}
+
 h1 {
   font-size: 28px;
   color: #000;

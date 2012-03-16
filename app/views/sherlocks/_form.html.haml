@@ -1,0 +1,52 @@
+= stylesheet_link_tag("sherlock_form")
+
+- form_for(@sherlock) do |f|
+  - if @sherlock.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@sherlock.errors.count, "error")} prohibited this sherlock from being saved:"
+
+      %ul
+      - @sherlock.errors.full_messages.each do |msg|
+        %li= msg
+
+
+  %hr
+  %br
+  
+  %p Region: #{select('sherlock', 'region_id', Region.all_active.order(:name).map{|r| [r.name, r.id] })}
+  %br
+  %br
+  
+  .clear
+
+  .features_box.required
+    .field
+      %h2 Required
+      %h4 must have ALL of these
+      - @features.each do |feature|
+        #{check_box("required", feature)} - #{feature.titleize}
+        %br
+
+  .features_box.desired
+    .field
+      %h2 Desired
+      <h4>must have ONE or more</h4>
+      - @features.each do |feature|
+        #{check_box("desired", feature)} - #{feature.titleize}
+        %br
+
+
+  .features_box.nots
+    .field
+      %h2 Nots
+      <h4>CANNOT have ANY</h4>
+      - @features.each do |feature|
+        #{check_box("nots", feature)} - #{feature.titleize}
+        %br
+
+  .clear
+
+  %br
+  
+  .actions
+    = submit_tag 'Search'
