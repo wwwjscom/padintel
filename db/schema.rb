@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111029033430) do
+ActiveRecord::Schema.define(:version => 20120316014024) do
 
   create_table "apartments", :force => true do |t|
     t.string   "url"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(:version => 20111029033430) do
     t.integer  "region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "price_max",  :default => 0
+    t.integer  "price_min",  :default => 0
   end
 
 end

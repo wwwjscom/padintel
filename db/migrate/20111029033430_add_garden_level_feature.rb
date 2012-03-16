@@ -4,7 +4,7 @@ class AddGardenLevelFeature < ActiveRecord::Migration
   end
 
   def self.down
-    x = FeatureTerms.find_by_feature('garden level')
+    x = FeatureTerm.find_by_feature('garden level')
     FeatureTerm.delete(x)
   end
 end
