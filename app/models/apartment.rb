@@ -2,6 +2,10 @@ class Apartment < ActiveRecord::Base
 	serialize :features, Array
   belongs_to :region
 	
+	def self.find_size_of_region(region_id)
+	  Apartment.where(:region_id => region_id).count
+	end
+	
 	def self.find_with_features(required_features, desired_features, nots_features, region_id, price_min, price_max)
     apts = Apartment.where(:region_id => region_id).order('created_at DESC')
     

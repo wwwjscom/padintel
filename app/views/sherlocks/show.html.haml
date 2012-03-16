@@ -29,6 +29,7 @@
 - if @apartments.empty?
   %p No results found, sorry.
 - else
+  %h4= "Hiding #{@region_size - @apartments.size} apartments that aren't right for you.  Time saver, anyone?"
   - @apartments.each do |apartment|
     %p= link_to apartment.title, apartment.url
     %p= "Features: #{apartment.features.join(', ')}"
