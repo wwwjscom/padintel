@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %h2 Apartment Results
-%p.announcementBookmark this page and come back later and check for new results
+%p.announcement Bookmark this page and come back later and check for new results
 
 %p= "Region: #{@sherlock.region.name}"
 
@@ -10,14 +10,12 @@
   %ul
   - @sherlock.required.each do |r|
     %li= r.titleize
-  - end
 
 .features_box.desired
   %h3 Desired
   %ul
   - @sherlock.desired.each do |r|
     %li= r.titleize
-  - end
 
 .features_box.nots
 
@@ -25,7 +23,6 @@
   %ul
   - @sherlock.nots.each do |r|
     %li= r.titleize
-  - end
 
 .clear
 
@@ -36,5 +33,3 @@
     %p= link_to apartment.title, apartment.url
     %p= "Features: #{apartment.features.join(', ')}"
     %hr
-  - end
-- end
