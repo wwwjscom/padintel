@@ -1,5 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
+  
+price_search_one_result:
   price_max: 1701
   price_min: 1699
+  required: ["1", "2"]
+  desired: [2, 2]
+  nots: [3, 2]

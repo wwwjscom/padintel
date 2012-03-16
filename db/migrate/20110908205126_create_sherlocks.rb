@@ -1,9 +1,9 @@
 class CreateSherlocks < ActiveRecord::Migration
   def self.up
     create_table :sherlocks do |t|
-      t.text :desired
-      t.text :required
-      t.text :nots
+      t.text :desired, :null => true
+      t.text :required, :null => true
+      t.text :nots, :null => true
       t.integer :region_id
 
       t.timestamps
