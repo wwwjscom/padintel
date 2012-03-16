@@ -29,4 +29,4 @@ Region.create(:active => true, :name => 'Chicago', :url => 'http://chicago.craig
 Apartment.create(:region_id => 1, :url => 'http://foobar.com', :title => 'apt 1', :features => ['hardwood floors', 'pool', 'gym'])
 Apartment.create(:region_id => 1, :url => 'http://foobar.com', :title => 'apt 2', :features => ['carpet', 'pool', 'gym'])
 Apartment.create(:region_id => 2, :url => 'http://foobar.com', :title => 'apt 3', :features => ['hardwood floors', 'pool', 'gym', 'den', 'fios'])
-Apartment.create(:region_id => 2, :url => 'http://foobar.com', :title => 'apt 5', :features => ['den', 'fios', 'parking'])
+Apartment.create(:region_id => 2, :url => 'http://foobar.com', :title => 'apt 5', :features => ['den', 'fios', 'parking'], :price => 1700)
