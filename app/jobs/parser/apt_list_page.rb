@@ -26,6 +26,7 @@ class AptListPage < ActiveRecord::Base
         next unless links_to_apt?(link)
 				next if Apartment.find_by_url(link.href)
         @apts << AptDetailsPage.new(link.href, link.to_s).parse
+        sleep 0.1 # Don't hit CL too quickly
         i += 1
       end
     end

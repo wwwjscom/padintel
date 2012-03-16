@@ -19,7 +19,7 @@ class SherlocksController < ApplicationController
   # GET /sherlocks/1.xml
   def show
     @sherlock = Sherlock.find(params[:id])
-		@apartments = Apartment.find_with_features(@sherlock.required, @sherlock.desired, @sherlock.nots)
+		@apartments = Apartment.find_with_features(@sherlock.required, @sherlock.desired, @sherlock.nots, @sherlock.region_id)
 
     respond_to do |format|
       format.html # show.html.erb

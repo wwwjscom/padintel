@@ -4,6 +4,10 @@ class Apartments < ActiveRecord::Migration
 			t.string :url
 			t.string :title
 			t.text :features
+      t.integer :region_id
+      t.integer :price
+      t.text :neighborhood
+
       t.timestamps
 		end
   end
