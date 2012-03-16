@@ -4,17 +4,6 @@ class SherlocksController < ApplicationController
   def about
   end
 
-  # GET /sherlocks
-  # GET /sherlocks.xml
-  def index
-    @sherlocks = Sherlock.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @sherlocks }
-    end
-  end
-
   # GET /sherlocks/1
   # GET /sherlocks/1.xml
   def show
@@ -37,11 +26,6 @@ class SherlocksController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @sherlock }
     end
-  end
-
-  # GET /sherlocks/1/edit
-  def edit
-    @sherlock = Sherlock.find(params[:id])
   end
 
   # POST /sherlocks
@@ -69,31 +53,4 @@ class SherlocksController < ApplicationController
     end
   end
 
-  # PUT /sherlocks/1
-  # PUT /sherlocks/1.xml
-  def update
-    @sherlock = Sherlock.find(params[:id])
-
-    respond_to do |format|
-      if @sherlock.update_attributes(params[:sherlock])
-        format.html { redirect_to(@sherlock, :notice => 'Sherlock was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @sherlock.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /sherlocks/1
-  # DELETE /sherlocks/1.xml
-  def destroy
-    @sherlock = Sherlock.find(params[:id])
-    @sherlock.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(sherlocks_url) }
-      format.xml  { head :ok }
-    end
-  end
 end
