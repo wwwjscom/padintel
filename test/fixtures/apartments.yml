@@ -1,2 +1,10 @@
 park_glen:
   price: 1700
+  created_at: <%= 1.day.ago %>
+
+random:
+  price: 2100
+  created_at: <%= 1.day.ago %>
+  
+stale:
+  created_at: <%= 21.days.ago %>

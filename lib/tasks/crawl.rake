@@ -4,3 +4,4 @@ namespace :spider do
 		Delayed::Job.enqueue Spider.new
 	end
 end
+
