@@ -10,6 +10,6 @@ class Prune
   end
 
 	def perform
-	  Apartment.destroy_all("created_at < '#{@days.days.ago}'")
+	  Apartment.destroy_all("created_at < '#{@days.days.ago.strftime("%Y-%m-%d %H:%m:%S")}'")
   end
 end
