@@ -8,6 +8,7 @@ gem 'rails', '3.0.1'
 gem 'sqlite3', :require => 'sqlite3'
 gem 'mechanize'
 gem 'delayed_job'
+gem 'haml'
 
 # Use unicorn as the web server
 # gem 'unicorn'
