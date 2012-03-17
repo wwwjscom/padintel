@@ -1,0 +1,7 @@
+alert('here');
+$('#apartments').append('<%= escape_javascript render(@apartments) %>');
+<% if @apartments.next_page %>
+  $('.pagination').replaceWith('<%= escape_javascript will_paginate(@apartments) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

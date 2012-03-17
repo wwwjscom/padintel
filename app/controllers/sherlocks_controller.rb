@@ -9,7 +9,7 @@ class SherlocksController < ApplicationController
   def show
     @sherlock = Sherlock.find(params[:id])
     @region_size = Apartment.find_size_of_region(@sherlock.region_id)
-		@apartments = Apartment.find_with_features(@sherlock.required, @sherlock.desired, @sherlock.nots, @sherlock.region_id, @sherlock.price_min, @sherlock.price_max)
+		@apartments = Apartment.find_with_features(@sherlock.required, @sherlock.desired, @sherlock.nots, @sherlock.region_id, @sherlock.price_min, @sherlock.price_max).page(params[:page]).per_page(1)
 
     respond_to do |format|
       format.html # show.html.erb

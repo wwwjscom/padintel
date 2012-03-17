@@ -10,6 +10,9 @@ gem 'mechanize'
 gem 'delayed_job'
 gem 'haml'
 
+gem 'jquery-rails'
+gem 'will_paginate'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
